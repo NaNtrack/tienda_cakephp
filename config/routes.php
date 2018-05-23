@@ -62,6 +62,9 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/categories/:id', [
       'controller' => 'Categories',
       'action' => 'view'
+    ])
+    ->setPatterns([
+        'id' => '[0-9]+',
     ]);
     /**
      * Connect catchall routes for all controllers.
