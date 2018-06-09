@@ -31,17 +31,13 @@ class CategoriesController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
+    public function view($id = null, $slug = '')
     {
-        /*$category = $this->Categories->get($id, [
-            'contain' => []
-        ]);
-        */
-        $category = [
-          'id' => 1,
-          'name' => 'holi'
-        ];
-        $this->set('category', $category);
+        $categories = $this->Categories->find();
+        $category = $this->Categories->get($id);
+        $Items = $this->loadModel('Items');
+        $items = $Items->findByCategoryId($id)->toArray();
+        $this->set(compact('categories', 'category', 'items'));
     }
 
     /**
