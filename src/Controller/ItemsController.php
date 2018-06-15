@@ -57,7 +57,12 @@ class ItemsController extends AppController
             }
             $this->Flash->error(__('The item could not be saved. Please, try again.'));
         }
-        $this->set(compact('item'));
+
+        $Categories = $this->loadModel('Categories');
+        $categories = $Categories->find('list');
+        $Users = $this->loadModel('Users');
+        $users = $Users->find('list');
+        $this->set(compact('item', 'categories', 'users'));
     }
 
     /**

@@ -19,10 +19,8 @@ class HomeController extends AppController
      */
     public function index()
     {
-        $Categories = $this->loadModel('Categories');
-        $categories = $Categories->find();
-
-
+        $Cat = $this->loadModel('Categories');
+        $categories = $Cat->find();
         $this->set(compact('categories'));
     }
 }

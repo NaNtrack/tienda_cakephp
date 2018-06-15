@@ -8,7 +8,7 @@
       <?php foreach ($categories as $cat) {
         echo $this->Html->link(
           $cat['name'],
-          ['controller' => 'Categories', 'action' => 'view', $cat['id'], $cat['slug']],
+          ['_name' => 'category_view', 'id' => $cat['id'], 'slug' => $cat['slug']],
           ['class' => 'list-group-item']
         );
       }

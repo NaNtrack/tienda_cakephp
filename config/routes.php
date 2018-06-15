@@ -65,7 +65,7 @@ Router::scope('/', function (RouteBuilder $routes) {
     ],
     [
       '_name' => 'category_view',
-      'pass' => ['id','slug']
+      'pass' => ['id', 'slug']
     ])
     ->setPatterns([
         'id' => '[0-9]+',

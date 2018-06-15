@@ -11,7 +11,9 @@
     </ul>
 </nav>
 <div class="items form large-9 medium-8 columns content">
-    <?= $this->Form->create($item) ?>
+    <?= $this->Form->create($item, [
+      'class' => 'form-horizontal'
+    ]) ?>
     <fieldset>
         <legend><?= __('Add Item') ?></legend>
         <?php
